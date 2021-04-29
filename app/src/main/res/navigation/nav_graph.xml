@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.training.movieinfo.screen.ListFragment"
+        android:label="fragment_movie_list"
+        tools:layout="@layout/fragment_movie_list" >
+        <action
+            android:id="@+id/action_listFragment_to_watchFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right_to_left"
+            app:exitAnim="@anim/slide_out_left_to_right"
+            app:popEnterAnim="@anim/slide_in_left_to_right"
+            app:popExitAnim="@anim/slide_out_right_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.training.movieinfo.screen.DetailFragment"
+        android:label="fragment_watch"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_watchFragment_to_listFragment"
+            app:destination="@id/listFragment"/>
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_watchFragment_to_watchFragment2"
+            app:destination="@id/watchFragment2"/>
+    </fragment>
+    <fragment
+        android:id="@+id/watchFragment2"
+        android:name="com.training.movieinfo.screen.WatchFragment"
+        android:label="fragment_watch"
+        tools:layout="@layout/fragment_watch" >
+        <action
+            android:id="@+id/action_backTo_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_goTo_homeFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+    </fragment>
+</navigation>

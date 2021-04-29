@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MovieInfo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="YOUTUBE_API_KEY">AIzaSyAc-naC2SgyHj8Xyofq59Hw6SBli1YC2ak</string>
+    <string name="detail_imdb">IMDB: %s</string>
+
+</resources>
